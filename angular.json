@@ -14,6 +14,9 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -25,6 +28,7 @@
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
+            "prerender": false,
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
@@ -86,5 +90,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ccffd430-221c-468c-8eb8-e9c48bc2835a"
   }
 }
