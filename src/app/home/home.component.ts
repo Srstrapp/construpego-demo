@@ -9,8 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  whatsappNumber = '573001234567'; // Reemplazar con real
-  
+  // Blindaje de seguridad: El número nunca se expone como un string completo en el HTML
+  private p1 = '58';
+  private p2 = '412';
+  private p3 = '0000000'; // Reemplazar por el resto del número real
+
   selectedProduct = signal<any>(null);
   showChatBubble = signal(false);
   
@@ -18,13 +21,13 @@ export class HomeComponent {
     {
       id: 1,
       name: 'Supercolo Gris',
-      category: 'Pegantes',
-      description: 'Mortero de cemento gris con polímeros de alta adherencia para cerámica y piedra natural.',
-      badge: 'Bestseller',
+      category: 'Pegantes de Ingeniería',
+      description: 'La base fundamental de la construcción moderna. Mortero molecular gris con polímeros avanzados para una adherencia indestructible en cerámica y piedra natural.',
+      badge: 'Adherencia Molecular',
       image: 'products/supercolo-gris.png',
       details: {
         uso: 'Ideal para cerámicas de formato medio en interiores y exteriores. Mezcle con agua limpia hasta obtener una pasta homogénea.',
-        garantia: '10 años de estabilidad estructural bajo condiciones normales de uso.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Densidad: 1.6 g/cm3 | Tiempo de ajuste: 20 min | Resistencia: > 1.0 MPa.',
         pdfUrl: 'assets/docs/ficha-supercolo-gris.pdf'
       }
@@ -33,111 +36,111 @@ export class HomeComponent {
       id: 2,
       name: 'Supercolo Pro Blanco',
       category: 'Pegantes Premium',
-      description: 'Cemento blanco de granulometría controlada para acabados inmaculados.',
-      badge: 'Acabado de Lujo',
+      description: 'Pureza técnica en cada aplicación. Cemento blanco de granulometría ultra-controlada diseñado para acabados de lujo que exigen una estética impecable.',
+      badge: 'Pureza Técnica',
       image: 'products/supercolo-pego blanco.png',
       details: {
         uso: 'Especial para mármol, granito y piezas blancas que requieren no mancharse.',
-        garantia: 'Garantía extendida de 12 años.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Blancura: 90% | Tiempo abierto: 30 min | Adherencia superior.',
         pdfUrl: 'assets/docs/ficha-supercolo-pro.pdf'
       }
     },
     {
       id: 3,
-      name: 'Pega Bloque',
-      category: 'Mezcla de alto rendimiento',
-      description: 'Solo requiere agua. Para la construcción con bloques de arcilla, concreto y ladrillos.',
-      badge: 'Solo requiere agua',
+      name: 'Superbloq',
+      category: 'Morteros de Alto Rendimiento',
+      description: 'Mortero de alto rendimiento para el pegado de bloques de arcilla o concreto. ¡Tecnología de mezcla lista, solo requiere agua!',
+      badge: 'Mezcla Lista',
       image: 'products/superbloq.png',
       details: {
         uso: 'Mezclar con agua hasta consistencia plástica. Aplicar en juntas de 1cm.',
-        garantia: 'Alta resistencia al corte y compresión.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Fraguado inicial: 4 horas | Resistencia final: 28 días.',
         pdfUrl: 'assets/docs/ficha-pega-bloque.pdf'
       }
     },
     {
       id: 4,
-      name: 'Super Estuco Pro',
-      category: 'Acabados',
-      description: 'Acabado extra blanco y liso para interiores de alta gama.',
-      badge: 'Nuevo',
+      name: 'Super Estuco',
+      category: 'Alta Decoración',
+      description: 'Acabado brillante y sofisticado para interiores de alta gama. Máxima blancura y suavidad en presentación de 10kg.',
+      badge: 'Acabado Espejo',
       image: 'products/super-estuco.png',
       details: {
         uso: 'Aplicar sobre revoque o concreto para obtener una superficie lisa tipo espejo.',
-        garantia: 'Protección contra micro-fisuras por 5 años.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Secado rápido | Lijado fácil | Bajo polvo.',
         pdfUrl: 'assets/docs/ficha-estuco-pro.pdf'
       }
     },
     {
       id: 5,
-      name: 'Super Friso',
-      category: 'Nivelación',
-      description: 'La capa de acabado perfecta para nivelar paredes. Cemento gris y sílice de alta calidad.',
-      badge: 'Nivelación Perfecta',
+      name: 'Superfriso',
+      category: 'Nivelación de Precisión',
+      description: 'Mortero de alta ingeniería diseñado para nivelación de paredes limitadas por rectas paralelas. Acabado extra liso y fraguado controlado.',
+      badge: 'Nivelación Técnica',
       image: 'products/super-friso.png',
       details: {
         uso: 'Ideal para corregir imperfecciones en muros antes de estucar.',
-        garantia: 'Excelente adherencia al soporte.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Espesor máximo: 5mm | Acabado fino.',
         pdfUrl: 'assets/docs/ficha-super-friso.pdf'
       }
     },
     {
       id: 6,
-      name: 'Super Concreto',
-      category: 'Ingeniería',
-      description: 'Diseñado para estructuras robustas como techos, muros y pisos que exigen máxima resistencia.',
-      badge: 'Estructuras Robustas',
+      name: 'Super Concret',
+      category: 'Ingeniería Estructural',
+      description: 'Mezcla técnica de Cemento Portland y Arena Sílice. Máxima resistencia estructural para vaciados de techos, muros y vigas de gran escala.',
+      badge: 'Resistencia Sísmica',
       image: 'products/superconcret.png',
       details: {
         uso: 'Vaciado de estructuras de concreto reforzado.',
-        garantia: 'Cumple normas sismoresistentes.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Resistencia: 3000-4000 PSI según mezcla.',
         pdfUrl: 'assets/docs/ficha-super-concreto.pdf'
       }
     },
     {
       id: 7,
-      name: 'Adhesivo Piscinas',
-      category: 'Alto Tráfico',
-      description: 'Resistente a cambios de temperatura y humedad. Ideal para piscinas, spas y fachadas.',
-      badge: 'Resistente H2O',
+      name: 'Supercolo Plus',
+      category: 'Grado Inmersión',
+      description: 'Adhesivo de alto desempeño para zonas de intenso tránsito, piscinas y spas. Resistente a químicos y cambios térmicos extremos.',
+      badge: 'Grado Inmersión',
       image: 'products/supercolo-plus(piscina).png',
       details: {
         uso: 'Especial para inmersión constante. Aplicar en superficies limpias.',
-        garantia: 'Resistencia a químicos de piscina.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Flexibilidad mejorada | Absorción nula.',
         pdfUrl: 'assets/docs/ficha-piscinas.pdf'
       }
     },
     {
       id: 8,
-      name: 'Pega Porcelanato',
-      category: 'Alto Desempeño',
-      description: 'Adhesivo especializado para piezas de baja absorción y gran formato.',
-      badge: 'Gran Formato',
+      name: 'Supercolo Premium',
+      category: 'Formatos Gigantes',
+      description: 'Adhesivo molecular para piezas de baja absorción y gran peso como Mármol, Granito y Porcelanatos de formato gigante.',
+      badge: 'Adherencia Molecular',
       image: 'products/supercolo-premium.png',
       details: {
         uso: 'Doble encolado recomendado para piezas superiores a 60x60cm.',
-        garantia: 'Máxima flexibilidad garantizada.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
         ficha: 'Clasificación C2TE | Alta deformabilidad.',
         pdfUrl: 'assets/docs/ficha-porcelanato.pdf'
       }
     },
     {
       id: 9,
-      name: 'Mortero Impermeable',
-      category: 'Protección',
-      description: 'Barrera definitiva contra la humedad en cimentaciones y tanques.',
-      badge: 'Zero Humedad',
+      name: 'El Soberano',
+      category: 'Eficiencia Operativa',
+      description: 'Presentación optimizada de 12kg de mortero gris con polímeros. La misma adherencia del Supercolo Gris en un formato más manejable y eficiente.',
+      badge: 'Eficiencia Superior',
       image: 'products/elsoberano.png',
       details: {
-        uso: 'Recubrimiento de tanques de agua potable y muros de contención.',
-        garantia: '15 años de impermeabilidad.',
-        ficha: 'Resistente a presión hidrostática positiva y negativa.',
+        uso: 'Optimizado para aplicaciones rápidas en acabados y reparaciones.',
+        garantia: 'Respaldo Total Construcpego: Garantizamos adherencia molecular superior y resistencia estructural certificada. Este producto cumple con los estándares de ingeniería más exigentes de Venezuela, asegurando que su obra perdure por décadas.',
+        ficha: 'Resistente a presión hidrostática | Formato 12kg.',
         pdfUrl: 'assets/docs/ficha-impermeable.pdf'
       }
     }
@@ -209,17 +212,40 @@ export class HomeComponent {
           x: () => -(container.scrollWidth - window.innerWidth),
           ease: "none",
           scrollTrigger: {
-            trigger: ".projects-container",
+            trigger: "#proyectos",
             pin: true,
             scrub: 1,
             start: "top top",
-            // El scroll dura lo que mida el contenido extra
-            end: () => "+=" + (container.scrollWidth - window.innerWidth)
+            end: () => "+=" + (container.scrollWidth - window.innerWidth),
+            invalidateOnRefresh: true // Importante para responsive
           }
         });
       }
 
-      // 3. Reveal animations for "Nosotros"
+      // 3. Nosotros: Parallax Frames
+      gsap.to(".frame-maestro", {
+        scrollTrigger: {
+          trigger: "#nosotros",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1
+        },
+        y: -60,
+        ease: "none"
+      });
+
+      gsap.to(".frame-tecnico", {
+        scrollTrigger: {
+          trigger: "#nosotros",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1
+        },
+        y: 60,
+        ease: "none"
+      });
+
+      // 4. Reveal animations for "Nosotros" content
       gsap.from(".nosotros-reveal", {
         scrollTrigger: {
           trigger: "#nosotros",
@@ -231,6 +257,9 @@ export class HomeComponent {
         duration: 1,
         ease: "power3.out"
       });
+
+      // Forzar el recálculo de GSAP
+      ScrollTrigger.refresh();
     });
 
     // Mobile: Simplified Experience
@@ -258,8 +287,10 @@ export class HomeComponent {
     document.body.style.overflow = 'auto';
   }
 
-  getWhatsAppLink(msg?: string): string {
-    const text = msg ? encodeURIComponent(msg) : 'Hola, quiero recibir asesoría premium sobre Construpego';
-    return `https://wa.me/${this.whatsappNumber}?text=${text}`;
+  contactWhatsApp(msg?: string) {
+    const phone = `${this.p1}${this.p2}${this.p3}`;
+    const text = msg ? encodeURIComponent(msg) : encodeURIComponent('Hola, quiero recibir asesoría premium sobre Construcpego');
+    const url = `https://wa.me/${phone}?text=${text}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 }
