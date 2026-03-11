@@ -21,7 +21,7 @@ export class HomeComponent {
       category: 'Pegantes',
       description: 'Mortero de cemento gris con polímeros de alta adherencia para cerámica y piedra natural.',
       badge: 'Bestseller',
-      image: 'assets/products/placeholder.png',
+      image: 'products/supercolo-gris.png',
       details: {
         uso: 'Ideal para cerámicas de formato medio en interiores y exteriores. Mezcle con agua limpia hasta obtener una pasta homogénea.',
         garantia: '10 años de estabilidad estructural bajo condiciones normales de uso.',
@@ -35,7 +35,7 @@ export class HomeComponent {
       category: 'Pegantes Premium',
       description: 'Cemento blanco de granulometría controlada para acabados inmaculados.',
       badge: 'Acabado de Lujo',
-      image: 'assets/products/placeholder.png',
+      image: 'products/supercolo-pego blanco.png',
       details: {
         uso: 'Especial para mármol, granito y piezas blancas que requieren no mancharse.',
         garantia: 'Garantía extendida de 12 años.',
@@ -49,7 +49,7 @@ export class HomeComponent {
       category: 'Mezcla de alto rendimiento',
       description: 'Solo requiere agua. Para la construcción con bloques de arcilla, concreto y ladrillos.',
       badge: 'Solo requiere agua',
-      image: 'assets/products/placeholder.png',
+      image: 'products/superbloq.png',
       details: {
         uso: 'Mezclar con agua hasta consistencia plástica. Aplicar en juntas de 1cm.',
         garantia: 'Alta resistencia al corte y compresión.',
@@ -63,7 +63,7 @@ export class HomeComponent {
       category: 'Acabados',
       description: 'Acabado extra blanco y liso para interiores de alta gama.',
       badge: 'Nuevo',
-      image: 'assets/products/placeholder.png',
+      image: 'products/super-estuco.png',
       details: {
         uso: 'Aplicar sobre revoque o concreto para obtener una superficie lisa tipo espejo.',
         garantia: 'Protección contra micro-fisuras por 5 años.',
@@ -77,7 +77,7 @@ export class HomeComponent {
       category: 'Nivelación',
       description: 'La capa de acabado perfecta para nivelar paredes. Cemento gris y sílice de alta calidad.',
       badge: 'Nivelación Perfecta',
-      image: 'assets/products/placeholder.png',
+      image: 'products/super-friso.png',
       details: {
         uso: 'Ideal para corregir imperfecciones en muros antes de estucar.',
         garantia: 'Excelente adherencia al soporte.',
@@ -91,7 +91,7 @@ export class HomeComponent {
       category: 'Ingeniería',
       description: 'Diseñado para estructuras robustas como techos, muros y pisos que exigen máxima resistencia.',
       badge: 'Estructuras Robustas',
-      image: 'assets/products/placeholder.png',
+      image: 'products/superconcret.png',
       details: {
         uso: 'Vaciado de estructuras de concreto reforzado.',
         garantia: 'Cumple normas sismoresistentes.',
@@ -105,7 +105,7 @@ export class HomeComponent {
       category: 'Alto Tráfico',
       description: 'Resistente a cambios de temperatura y humedad. Ideal para piscinas, spas y fachadas.',
       badge: 'Resistente H2O',
-      image: 'assets/products/placeholder.png',
+      image: 'products/supercolo-plus(piscina).png',
       details: {
         uso: 'Especial para inmersión constante. Aplicar en superficies limpias.',
         garantia: 'Resistencia a químicos de piscina.',
@@ -119,7 +119,7 @@ export class HomeComponent {
       category: 'Alto Desempeño',
       description: 'Adhesivo especializado para piezas de baja absorción y gran formato.',
       badge: 'Gran Formato',
-      image: 'assets/products/placeholder.png',
+      image: 'products/supercolo-premium.png',
       details: {
         uso: 'Doble encolado recomendado para piezas superiores a 60x60cm.',
         garantia: 'Máxima flexibilidad garantizada.',
@@ -133,7 +133,7 @@ export class HomeComponent {
       category: 'Protección',
       description: 'Barrera definitiva contra la humedad en cimentaciones y tanques.',
       badge: 'Zero Humedad',
-      image: 'assets/products/placeholder.png',
+      image: 'products/elsoberano.png',
       details: {
         uso: 'Recubrimiento de tanques de agua potable y muros de contención.',
         garantia: '15 años de impermeabilidad.',
@@ -142,6 +142,7 @@ export class HomeComponent {
       }
     }
   ]);
+
 
   projects = signal([
     { 
