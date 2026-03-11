@@ -16,8 +16,8 @@
         <a href="#proyectos" class="hover:text-construpego-red transition-colors">Obras</a>
         <a href="#contacto" class="hover:text-construpego-red transition-colors">Contacto</a>
       </div>
-      <a [href]="getWhatsAppLink()" target="_blank"
-        class="bg-construpego-red text-white px-4 md:px-5 py-1.5 rounded-full text-[10px] md:text-xs font-semibold hover:bg-opacity-90 transition-all">
+      <a (click)="contactWhatsApp()"
+        class="cursor-pointer bg-construpego-red text-white px-4 md:px-5 py-1.5 rounded-full text-[10px] md:text-xs font-semibold hover:bg-opacity-90 transition-all">
         Contactar
       </a>
     </div>
@@ -44,45 +44,88 @@
           class="w-full md:w-auto px-8 md:px-10 py-3 md:py-4 bg-construpego-red text-white rounded-full font-bold hover:scale-105 transition-transform shadow-lg shadow-construpego-red/20 text-sm md:text-base text-center">Explorar
           Catálogo</a>
         <a href="#nosotros"
-          class="w-full md:w-auto px-8 md:px-10 py-3 md:py-4 text-apple-textPrimary dark:text-white font-bold hover:underline text-sm md:text-base text-center">Nuestra
-          Historia →</a>
+          class="w-full md:w-auto px-8 md:px-10 py-3 md:py-4 bg-construpego-red text-white rounded-full font-bold hover:scale-105 transition-transform shadow-lg shadow-construpego-red/20 text-sm md:text-base text-center">Nuestra
+          Historia </a>
       </div>
     </div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(227,6,19,0.05),transparent_70%)]"></div>
   </section>
 
-  <!-- 2. NOSOTROS -->
-  <section id="nosotros" class="py-20 md:py-32 px-6 bg-white dark:bg-[#050505]">
-    <div class="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-      <div class="nosotros-reveal">
-        <h2
-          class="text-3xl md:text-5xl font-bold tracking-tight text-apple-textPrimary dark:text-apple-textDarkPrimary mb-6 md:mb-8">
-          Nuestra Filosofía</h2>
-        <p class="text-base md:text-lg text-apple-gray leading-relaxed mb-8 md:mb-12">
-          En Construcpego no fabricamos pegantes; desarrollamos soluciones de adherencia molecular que garantizan que lo
-          que construyes hoy, permanezca para siempre.
+  <!-- 2. NOSOTROS (FILOSOFÍA) -->
+  <section id="nosotros" class="py-24 md:py-40 px-6 bg-white dark:bg-[#050505] overflow-hidden">
+    <div class="max-w-[1200px] mx-auto grid md:grid-cols-12 gap-12 md:gap-20 items-center">
+
+      <!-- Text Content (Left) -->
+      <div class="nosotros-reveal md:col-span-5 space-y-8">
+        <div>
+          <h2 class="text-[10px] md:text-sm font-bold uppercase tracking-[0.3em] text-apple-gray mb-4">Ingeniería para
+            Venezuela</h2>
+          <h3
+            class="text-4xl md:text-6xl font-bold tracking-tight text-apple-textPrimary dark:text-apple-textDarkPrimary leading-none">
+            Nuestra <br> <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-construpego-red to-construpego-red/50">Filosofía.</span>
+          </h3>
+        </div>
+
+        <p class="text-lg md:text-xl text-apple-gray leading-relaxed font-medium">
+          Con más de dos décadas de trayectoria en el mercado venezolano, Construcpego C.A. ha evolucionado para
+          convertirse en el aliado estratégico de las grandes obras del país, garantizando que el patrimonio de nuestros
+          clientes desafíe el tiempo.
         </p>
-        <div class="space-y-6 md:space-y-8">
-          <div class="border-l-2 border-construpego-red pl-6">
-            <h4 class="font-bold text-apple-textPrimary dark:text-apple-textDarkPrimary text-lg md:text-xl">Misión</h4>
-            <p class="text-sm md:text-base text-apple-gray mt-2">Liderar la industria con materiales de alta ingeniería
-              que simplifiquen la construcción sin comprometer la resistencia estructural.</p>
+
+        <div class="space-y-8 pt-6">
+          <div class="group border-l-2 border-construpego-red pl-8 transition-all hover:pl-10">
+            <h4 class="font-bold text-apple-textPrimary dark:text-apple-textDarkPrimary text-xl">Misión</h4>
+            <p class="text-sm md:text-base text-apple-gray mt-2 leading-relaxed">
+              Liderar la industria nacional suministrando materiales de alta ingeniería que simplifiquen los procesos
+              constructivos, garantizando una resistencia estructural certificada.
+            </p>
           </div>
-          <div class="border-l-2 border-construpego-green pl-6">
-            <h4 class="font-bold text-apple-textPrimary dark:text-apple-textDarkPrimary text-lg md:text-xl">Visión</h4>
-            <p class="text-sm md:text-base text-apple-gray mt-2">Ser el estándar global de calidad técnica y estética en
-              cada obra de infraestructura nacional para el futuro.</p>
+          <div class="group border-l-2 border-construpego-green pl-8 transition-all hover:pl-10">
+            <h4 class="font-bold text-apple-textPrimary dark:text-apple-textDarkPrimary text-xl">Visión</h4>
+            <p class="text-sm md:text-base text-apple-gray mt-2 leading-relaxed">
+              Consolidarnos como el estándar indiscutible de calidad técnica y estética en la infraestructura de
+              Venezuela, proyectando nuestra ingeniería hacia el mercado internacional.
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="nosotros-reveal relative aspect-square bg-apple-light dark:bg-white/5 rounded-[2rem] md:rounded-apple overflow-hidden hidden md:block">
-        <div class="absolute inset-0 flex items-center justify-center text-apple-gray/10 group">
-          <svg width="240" height="240" fill="currentColor" viewBox="0 0 24 24"
-            class="group-hover:scale-110 transition-transform duration-1000">
-            <path d="M12 7V3L2 12h3v9h7v-6h2v6h7v-9h3L12 7z" />
-          </svg>
+
+      <!-- Asymmetric Frame Layout (Right) -->
+      <div class="md:col-span-7 relative min-h-[500px] md:min-h-[700px] flex items-center justify-center">
+
+        <!-- Frame 1: Maestro Pro (Large, Brutalist Concrete) -->
+        <div
+          class="frame-maestro absolute left-0 top-0 w-[85%] md:w-[75%] aspect-[4/5] z-10 rounded-apple overflow-hidden border-2 border-construpego-red shadow-2xl bg-[#f0f0f0] p-1">
+          <div class="w-full h-full rounded-[1.8rem] overflow-hidden">
+            <img src="/albanil.png" alt="Maestro de obra Construcpego" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none">
+          </div>
+          <div class="absolute bottom-8 left-8 text-white">
+            <span
+              class="text-[10px] font-bold uppercase tracking-widest bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">Respaldo
+              en Obra</span>
+          </div>
         </div>
+
+        <!-- Frame 2: Técnico/Fábrica (Small, Glass & Metal) -->
+        <div
+          class="frame-tecnico absolute right-0 bottom-10 w-[50%] md:w-[45%] aspect-square z-20 rounded-apple overflow-hidden border border-white/40 shadow-2xl backdrop-blur-2xl bg-white/10 p-2 md:p-3 group">
+          <div
+            class="w-full h-full rounded-[1.2rem] md:rounded-[1.8rem] overflow-hidden border border-black/10 dark:border-white/20">
+            <img src="/test-tecnico.png" alt="Pruebas de laboratorio"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+          </div>
+          <!-- Detail metal effect -->
+          <div
+            class="absolute top-4 right-4 w-4 h-4 bg-gray-400 rounded-full shadow-inner border border-white/30 hidden md:block">
+          </div>
+        </div>
+
+        <!-- Abstract Blobs -->
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-construpego-red/5 rounded-full blur-[100px] -z-10"></div>
       </div>
     </div>
   </section>
@@ -178,21 +221,20 @@
           <a href="mailto:info@construpego.com"
             class="text-construpego-red hover:underline decoration-2 underline-offset-8">info@construpego.com</a>
           <div class="flex gap-6">
-            <a href="#"
+            <a href="https://www.instagram.com/construcpego/"
               class="text-apple-textPrimary dark:text-white hover:text-construpego-red transition-colors">Instagram</a>
-            <a href="#"
+            <a href="https://www.facebook.com/Construcpego"
               class="text-apple-textPrimary dark:text-white hover:text-construpego-red transition-colors">Facebook</a>
-            <a href="#"
-              class="text-apple-textPrimary dark:text-white hover:text-construpego-red transition-colors">LinkedIn</a>
           </div>
         </div>
       </div>
       <div
         class="flex flex-col justify-between md:text-right border-t md:border-t-0 pt-8 md:pt-0 border-black/5 dark:border-white/5">
         <div class="text-apple-gray text-xs md:text-sm space-y-2">
-          <p>© 2026 Construpego SAS.</p>
-          <p>Sede Principal: Medellín, Colombia.</p>
-          <p>Cobertura a nivel nacional.</p>
+          <p>© 2026 Construcpego Morteros & Adhesivos, C.A .</p>
+          <p>Sede Principal y Planta de Producción:</p>
+          <p>Charallave, Edo. Miranda, Venezuela.</p>
+          <p>Distribución y Cobertura a Nivel Nacional.</p>
         </div>
       </div>
     </div>
@@ -268,9 +310,8 @@
             </div>
           </details>
         </div>
-        <a [href]="getWhatsAppLink('Hola, me interesa recibir más información y cotizar el ' + selectedProduct().name)"
-          target="_blank"
-          class="mt-8 md:mt-12 block w-full bg-construpego-red text-white text-center py-4 md:py-5 rounded-full font-bold text-base md:text-lg hover:shadow-2xl hover:bg-opacity-90 transition-all shadow-xl shadow-construpego-red/30">
+        <a (click)="contactWhatsApp('Hola, me interesa recibir más información y cotizar el ' + selectedProduct().name)"
+          class="cursor-pointer mt-8 md:mt-12 block w-full bg-construpego-red text-white text-center py-4 md:py-5 rounded-full font-bold text-base md:text-lg hover:shadow-2xl hover:bg-opacity-90 transition-all shadow-xl shadow-construpego-red/30">
           Consultar con Asesor Pro
         </a>
       </div>
@@ -296,9 +337,8 @@
         ¡Hola! 👋 ¿Necesitas ayuda para elegir el material ideal para tu obra?
       </p>
       <div class="mt-4 flex gap-2">
-        <a [href]="getWhatsAppLink('Hola, necesito ayuda para elegir el material adecuado')" target="_blank"
-          (click)="showChatBubble.set(false)"
-          class="bg-construpego-green text-white text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-opacity-90 transition-all">
+        <a (click)="contactWhatsApp('Hola, necesito ayuda para elegir el material adecuado'); showChatBubble.set(false)"
+          class="cursor-pointer bg-construpego-green text-white text-[10px] md:text-[11px] font-bold px-3 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-opacity-90 transition-all">
           Sí, ayudarme
         </a>
         <!-- Al darle "Luego", showChatBubble es false y reaparece el botón flotante -->
@@ -308,8 +348,8 @@
     </div>
     } @else {
     <!-- 2. El Botón Flotante (Se muestra solo si el chatbot NO está activo) -->
-    <a [href]="getWhatsAppLink()" target="_blank"
-      class="w-14 h-14 md:w-16 md:h-16 bg-construpego-green rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all group animate-fade-in">
+    <a (click)="contactWhatsApp()"
+      class="cursor-pointer w-14 h-14 md:w-16 md:h-16 bg-construpego-green rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all group animate-fade-in">
       <svg width="28" height="28" md:width="32" md:height="32" fill="white" viewBox="0 0 24 24"
         class="group-hover:rotate-12 transition-transform">
         <path
