@@ -31,13 +31,14 @@
         class="block text-construpego-red font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4 text-[10px] md:text-sm">Bienvenido
         a la Excelencia</span>
       <h1
-        class="text-4xl md:text-[120px] font-bold tracking-tighter leading-none text-apple-textPrimary dark:text-apple-textDarkPrimary">
-        Construyendo <br class="hidden md:block"> <span
-          class="bg-clip-text text-transparent bg-gradient-to-b from-apple-textPrimary to-apple-gray dark:from-white dark:to-white/30">Legados.</span>
+        class="text-4xl md:text-[120px] font-bold tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-construpego-red to-construpego-green pr-2 pb-2">
+        Fabricamos Soluciones <br class="hidden md:block">
+        para la Construcción.
       </h1>
       <p class="mt-6 md:mt-8 text-base md:text-2xl text-apple-gray max-w-2xl mx-auto font-medium leading-relaxed">
-        Donde la ingeniería de materiales se encuentra con la estética atemporal. Soluciones que desafían el paso de las
-        décadas.
+        La unión de la ingeniería y la estética atemporal. <br> Nuestros morteros y adhesivos ofrecen soluciones que
+        desafían
+        el paso de las décadas.
       </p>
       <div class="mt-10 md:mt-12 flex flex-col md:flex-row gap-4 justify-center items-center">
         <a href="#productos"
@@ -68,7 +69,8 @@
         </div>
 
         <p class="text-lg md:text-xl text-apple-gray leading-relaxed font-medium">
-          Con más de dos décadas de trayectoria en el mercado venezolano, Construcpego C.A. ha evolucionado para
+          Con más de dos décadas de trayectoria en el mercado venezolano, Construcpego Morteros y Adhesivos C.A. ha
+          evolucionado para
           convertirse en el aliado estratégico de las grandes obras del país, garantizando que el patrimonio de nuestros
           clientes desafíe el tiempo.
         </p>
@@ -77,7 +79,8 @@
           <div class="group border-l-2 border-construpego-red pl-8 transition-all hover:pl-10">
             <h4 class="font-bold text-apple-textPrimary dark:text-apple-textDarkPrimary text-xl">Misión</h4>
             <p class="text-sm md:text-base text-apple-gray mt-2 leading-relaxed">
-              Liderar la industria nacional suministrando materiales de alta ingeniería que simplifiquen los procesos
+              Liderar la industria nacional suministrando Morteros y Adhesivos de alta ingeniería que simplifiquen los
+              procesos
               constructivos, garantizando una resistencia estructural certificada.
             </p>
           </div>
@@ -143,14 +146,20 @@
 
       <div class="products-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         @for (item of products(); track item.id) {
+          
+        @if (item.id === 1) {
+        <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-4 md:mt-6 mb-2">
+          <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-apple-textPrimary dark:text-white border-b border-black/10 dark:border-white/10 pb-4">🏗️ Materiales Estructurales</h3>
+        </div>
+        }
+        @if (item.id === 4) {
+        <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-12 md:mt-16 mb-2">
+          <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-apple-textPrimary dark:text-white border-b border-black/10 dark:border-white/10 pb-4">🎨 Acabados Arquitectónicos</h3>
+        </div>
+        }
+
         <div (click)="openProduct(item)"
-          class="product-card cursor-pointer group relative bg-white dark:bg-white/5 rounded-[2rem] md:rounded-apple p-6 md:p-8 overflow-hidden border border-transparent hover:border-black/5 dark:hover:border-white/10 transition-all duration-500 shadow-sm hover:shadow-2xl">
-          <div class="absolute top-6 left-6 z-10">
-            <span
-              class="px-2 py-1 bg-construpego-green/10 text-construpego-green text-[9px] md:text-[10px] font-bold uppercase tracking-wider rounded-full">
-              {{ item.badge }}
-            </span>
-          </div>
+          class="product-card cursor-pointer group relative bg-white dark:bg-white/5 rounded-[2rem] md:rounded-apple p-6 xl:p-8 overflow-hidden border border-transparent hover:border-black/5 dark:hover:border-white/10 transition-all duration-500 shadow-sm hover:shadow-2xl">
           <div
             class="relative h-48 md:h-64 mb-6 md:mb-8 bg-white dark:bg-white/5 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent opacity-50"></div>
@@ -158,12 +167,16 @@
               class="w-full h-full object-contain p-4 transform group-hover:scale-110 transition-transform duration-700">
           </div>
           <div class="space-y-3 md:space-y-4">
-            <p class="text-[9px] md:text-[11px] font-bold text-apple-gray uppercase tracking-[0.2em]">{{ item.category
-              }}</p>
+            <p class="text-[9px] md:text-[11px] font-bold text-apple-gray uppercase tracking-[0.2em]">{{ item.category }}</p>
             <h4
               class="text-xl md:text-2xl font-bold text-apple-textPrimary dark:text-apple-textDarkPrimary tracking-tight">
               {{ item.name }}
             </h4>
+            <div class="flex items-start">
+              <span class="px-2.5 py-1 bg-construpego-green/10 text-construpego-green text-[9px] md:text-[10px] font-bold uppercase tracking-wider rounded-full">
+                {{ item.badge }}
+              </span>
+            </div>
             <p class="text-apple-gray text-xs md:text-sm leading-relaxed line-clamp-2">
               {{ item.description }}
             </p>
@@ -190,13 +203,9 @@
       @for (project of projects(); track project.title) {
       <div class="project-card w-full md:w-[45vw] flex-shrink-0 md:mr-20">
         <div class="relative h-[50vh] md:h-[65vh] rounded-[2rem] md:rounded-apple overflow-hidden group">
+          <img [src]="project.image" [alt]="project.title"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
           <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-700"></div>
-          <div class="absolute inset-0 flex items-center justify-center text-white/5">
-            <svg width="150" height="150" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
-            </svg>
-          </div>
           <div class="absolute bottom-8 md:bottom-12 left-8 md:left-12 text-white z-10 px-4">
             <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-construpego-green">{{ project.location
               }}</span>
@@ -219,7 +228,7 @@
           Hablemos de tu <br> próximo proyecto.</h2>
         <div class="flex flex-col md:flex-row flex-wrap gap-x-12 gap-y-6 text-base md:text-lg font-medium">
           <a href="mailto:info@construpego.com"
-            class="text-construpego-red hover:underline decoration-2 underline-offset-8">info@construpego.com</a>
+            class="text-construpego-red hover:underline decoration-2 underline-offset-8">Construcpegomorteros@gmail.com</a>
           <div class="flex gap-6">
             <a href="https://www.instagram.com/construcpego/"
               class="text-apple-textPrimary dark:text-white hover:text-construpego-red transition-colors">Instagram</a>
@@ -247,8 +256,8 @@
     <div
       class="relative w-full max-w-5xl bg-apple-light dark:bg-[#1c1c1e] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:h-auto border border-white/10">
       <button (click)="closeProduct()"
-        class="absolute top-4 md:top-8 right-4 md:right-8 z-50 p-2 md:p-3 bg-black/10 dark:bg-white/10 rounded-full hover:bg-construpego-red hover:text-white transition-all">
-        <svg width="20" height="20" md:width="24" md:height="24" fill="none" stroke="currentColor" stroke-width="2.5">
+        class="absolute top-4 md:top-8 right-4 md:right-8 z-50 p-2 md:p-3 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center hover:bg-construpego-red hover:text-white transition-all">
+        <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 6L6 18M6 6l12 12" />
         </svg>
       </button>
@@ -312,7 +321,7 @@
         </div>
         <a (click)="contactWhatsApp('Hola, me interesa recibir más información y cotizar el ' + selectedProduct().name)"
           class="cursor-pointer mt-8 md:mt-12 block w-full bg-construpego-red text-white text-center py-4 md:py-5 rounded-full font-bold text-base md:text-lg hover:shadow-2xl hover:bg-opacity-90 transition-all shadow-xl shadow-construpego-red/30">
-          Consultar con Asesor Pro
+          Consultar con Asesor
         </a>
       </div>
     </div>
